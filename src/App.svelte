@@ -6,13 +6,13 @@
 </script>
 
 <main>
-  <MediaQuery query="(min-width: 500px) and (max-width: 1280px)" let:matches>
+  <MediaQuery query="(min-width: 800px)" let:matches>
     {#if matches}
       <HelloDesktop />
     {/if}
   </MediaQuery>
 
-  <MediaQuery query="(max-width: 499px)" let:matches>
+  <MediaQuery query="(max-width: 800px)" let:matches>
     {#if matches}
       <HelloMobile />
     {/if}

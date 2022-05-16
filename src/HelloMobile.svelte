@@ -1,5 +1,6 @@
 <script>
   let womanmobile = "/images/illustration-woman-online-mobile.svg";
+  let icon = "./images/icon-arrow-down.svg";
   let Q1 = false;
   let Q2 = false;
   let Q3 = false;
@@ -23,15 +24,20 @@
   <div class="faq">
     <div><h1>FAQ</h1></div>
     <p class="question" on:click={toggleQ1} class:selected={Q1}>
-      How many team members can I invite? >
+      How many team members can I invite?<span
+        ><img src={icon} alt="icon" /></span
+      >
     </p>
     {#if Q1}
       <p class="answer">
         You can invite up to 2 additional users on the Free plan.
       </p>
     {/if}
+    <hr />
     <p class="question" on:click={toggleQ2} class:selected={Q2}>
-      What is the maximum file upload size? >
+      What is the maximum file upload size?<span
+        ><img src={icon} alt="icon" /></span
+      >
     </p>
     {#if Q2}
       <p class="answer">
@@ -39,9 +45,10 @@
         storage space.
       </p>
     {/if}
+    <hr />
     <p class="question" on:click={toggleQ3} class:selected={Q3}>
       There is no limit on team members for the Premium plan. What is the
-      maximum file upload size? >
+      maximum file upload size?<span><img src={icon} alt="icon" /></span>
     </p>
     {#if Q3}
       <p class="answer">
@@ -49,8 +56,9 @@
         storage space.
       </p>
     {/if}
+    <hr />
     <p class="question" on:click={toggleQ4} class:selected={Q4}>
-      How do I reset my password? >
+      How do I reset my password?<span><img src={icon} alt="icon" /></span>
     </p>
     {#if Q4}
       <p class="answer">
@@ -58,8 +66,9 @@
         your profile page. A reset link will be emailed to you.
       </p>
     {/if}
+    <hr />
     <p class="question" on:click={toggleQ5} class:selected={Q5}>
-      Can I cancel my subscription? >
+      Can I cancel my subscription?<span><img src={icon} alt="icon" /></span>
     </p>
     {#if Q5}
       <p class="answer">
@@ -68,6 +77,7 @@
         available 24/7. Phone lines are open during normal business hours.
       </p>
     {/if}
+    <hr />
   </div>
 </div>
 
@@ -87,6 +97,7 @@
     font-size: 12px;
     color: hsl(240, 6%, 50%);
     overflow: scroll;
+    font-weight: 400;
   }
 
   .womanmobile {
@@ -98,6 +109,7 @@
   .head {
     padding: 50px;
     z-index: 999;
+    background-image: url(./images/bg-pattern-mobile.svg);
   }
 
   .faq {
@@ -105,31 +117,39 @@
     background-color: white;
     z-index: 000;
     margin: -115px auto auto auto;
-
     padding-bottom: 50px;
     border-radius: 15px;
+    padding-inline: 10px;
   }
 
   .faq h1 {
     margin-top: 100px;
-    font-size: 60px;
+    margin-bottom: 50px;
+    font-size: 30px;
     text-align: center;
     color: hsl(237, 12%, 33%);
   }
 
   .question {
-    max-width: 300px;
-    padding-inline: 30px;
+    padding-block: 10px;
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    max-width: 300px;
   }
 
   .selected {
     color: hsl(237, 12%, 33%);
     font-weight: bold;
+    line-height: 200%;
   }
 
   .answer {
     max-width: 300px;
-    padding-inline: 30px;
+    padding-block: 10px;
+  }
+
+  hr {
+    color: hsl(240, 5%, 91%);
   }
 </style>
