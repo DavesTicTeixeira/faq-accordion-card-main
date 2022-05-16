@@ -22,7 +22,7 @@
   </div>
   <div class="faq">
     <div><h1>FAQ</h1></div>
-    <p class="question" on:click={toggleQ1}>
+    <p class="question" on:click={toggleQ1} class:selected={Q1}>
       How many team members can I invite? >
     </p>
     {#if Q1}
@@ -30,7 +30,7 @@
         You can invite up to 2 additional users on the Free plan.
       </p>
     {/if}
-    <p class="question" on:click={toggleQ2}>
+    <p class="question" on:click={toggleQ2} class:selected={Q2}>
       What is the maximum file upload size? >
     </p>
     {#if Q2}
@@ -39,7 +39,7 @@
         storage space.
       </p>
     {/if}
-    <p class="question" on:click={toggleQ3}>
+    <p class="question" on:click={toggleQ3} class:selected={Q3}>
       There is no limit on team members for the Premium plan. What is the
       maximum file upload size? >
     </p>
@@ -49,14 +49,18 @@
         storage space.
       </p>
     {/if}
-    <p class="question" on:click={toggleQ4}>How do I reset my password? ></p>
+    <p class="question" on:click={toggleQ4} class:selected={Q4}>
+      How do I reset my password? >
+    </p>
     {#if Q4}
       <p class="answer">
         Click “Forgot password” from the login page or “Change password” from
         your profile page. A reset link will be emailed to you.
       </p>
     {/if}
-    <p class="question" on:click={toggleQ5}>Can I cancel my subscription? ></p>
+    <p class="question" on:click={toggleQ5} class:selected={Q5}>
+      Can I cancel my subscription? >
+    </p>
     {#if Q5}
       <p class="answer">
         Yes! Send us a message and we’ll process your request no questions
@@ -69,6 +73,8 @@
 
 <style>
   .main {
+    box-sizing: border-box;
+    height: 99vh;
     margin: 0;
     padding: 0;
     display: flex;
@@ -77,6 +83,10 @@
     flex-direction: column;
     justify-content: center;
     padding-bottom: 50px;
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 12px;
+    color: hsl(240, 6%, 50%);
+    overflow: scroll;
   }
 
   .womanmobile {
@@ -104,12 +114,18 @@
     margin-top: 100px;
     font-size: 60px;
     text-align: center;
+    color: hsl(237, 12%, 33%);
   }
 
   .question {
     max-width: 300px;
     padding-inline: 30px;
     cursor: pointer;
+  }
+
+  .selected {
+    color: hsl(237, 12%, 33%);
+    font-weight: bold;
   }
 
   .answer {
